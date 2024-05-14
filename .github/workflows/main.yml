@@ -1,0 +1,27 @@
+name: Check files for Error
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Asegúrate de seleccionar la versión de Python que necesitas
+
+      - name: Run Python script
+        run: |
+          python search_error.py
+          if [ $? -ne 0 ]; then
+            echo "Error encontrado. Deteniendo el flujo de trabajo."
+            exit 1
+          fi
