@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}Lab Research{% endblock %}</title>
+
+	{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+	{% endblock %}
+</head>
+<body>
+	<main>
+		<header class="header-wrapper">
+			<section class="header-logo">
+        <img
+          src="{{ url_for('static', filename='image/test1.png') }}"
+          alt="Logo"
+          
+        />
+        <h1>CosmosTransfer</h1>
+      </section>
+			<section>
+        <a href="" class="btn-solid">Logout</a>
+      </section>
+		</header>
+		<section class="content-wrapper">
+			<article class="content-tab" id="tabs">
+        <span class="tab-active" onclick="showTab('balance')" data-tab="balance">Balance</span>
+        <span class="tab-inactive" onclick="showTab('activity')" data-tab="activity">Activity</span>
+        <span class="tab-inactive" onclick="showTab('transfer')" data-tab="transfer">New Transfer</span>
+			</article>
+			<article class="balance-container" id="balanceTab">
+				<span class="balance-card">0.00 USD</span>
+				<span class="balance-card">0.00 CAD</span>
+				<span class="balance-card">0.00 EUR</span>
+				<span class="balance-card">+</span>
+			</article>
+			<article class="activity-container" id="activityTab">
+				<p >
+					There have been no activity recorded for this account.
+				</p>
+			</article>
+			<article class="transfer-container" id="transferTab">
+				<form class="transfer-form">
+					<label for="amount">Amount<span>*</span></label>
+					<input type="text" id="amount" name="amount" required>
+			
+					<label for="accountNumber">Account Number<span>*</span></label>
+					<input type="text" id="accountNumber" name="accountNumber" required>
+			
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+			
+					<label for="description">Description (optional)</label>
+					<textarea id="description" name="description" rows="4" required></textarea>
+			
+					<button type="button" class="btn-solid">Submit</button>
+				</form>
+			</article>
+		</section>
+	</main>
+	<script>
+    function showTab(tabName) {
+      // Reset all tabs to inactive
+      document.querySelectorAll('.content-tab span').forEach(tab => {
+        tab.classList.remove('tab-active');
+        tab.classList.add('tab-inactive');
+      });
+
+      // Show the clicked tab as active
+      document.querySelector(`.content-tab span[data-tab="${tabName}"]`).classList.add('tab-active');
+      document.querySelector(`.content-tab span[data-tab="${tabName}"]`).classList.remove('tab-inactive');
+
+      // Hide all content sections
+      document.querySelectorAll('.content-wrapper article').forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Show the content of the clicked tab
+      document.getElementById(`${tabName}Tab`).style.display =  tabName === 'transfer' ? 'flex' :'grid';
+      document.getElementById(`tabs`).style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
+
+

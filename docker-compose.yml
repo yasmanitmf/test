@@ -1,0 +1,36 @@
+version: '3'
+
+volumes:
+  db_flask: {}
+  db_flask_conf: {}
+
+services:
+  db_flask:
+    image: mysql
+    restart: always
+    expose:
+      - 3306
+    env_file:
+      - .envs/.local/.mysql
+    volumes:
+      - db_flask:/var/lib/mysql
+      - db_flask_conf:/etc/mysql/conf.d
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 100
+
+  flask:
+    build:
+      context: ./
+      dockerfile: ./compose/Dockerfile
+    command: /start
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+    env_file:
+      - .envs/.local/.mysql
+    depends_on:
+      db_flask:
+        condition: service_healthy

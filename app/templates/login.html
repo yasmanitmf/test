@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="login-container">
+        <form action="" method="post" class="login-form">
+            <h2>Login</h2>
+            <div class="error-message">
+                <ul>
+                    <li>Error 1</li>
+                    <li>Error 2</li>
+                    <li>Error 3</li>
+                </ul>
+            </div>
+
+            <label for="">Field 1</label>
+            <input type="text" />
+            <span style="color: red;">Field 1 errors</span>
+
+            <label for="">Field 2</label>
+            <input type="text" />
+            <span style="color: red;">Field 2 errors</span>
+
+            <button class="btn-solid" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.header-wrapper {
+  background-color: #e4e9ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.header-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  & h1 {
+    font-size: 22px;
+    color: #1e3a8a;
+  }
+  & img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.btn-solid {
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+.content-wrapper {
+  padding: 48px 15%;
+}
+
+.content-tab {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  & span {
+    width: 150px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px 0;
+  }
+}
+.tab-active {
+  color: #fff;
+  background-color: #1e3a8a;
+}
+.tab-inactive {
+  color: #444;
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+.balance-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  gap: 56px;
+  margin: 48px 0;
+}
+
+.activity-container {
+  display: none;
+  padding: 20px 10px;
+  margin-top: 10px;
+}
+.transfer-container {
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 50px;
+}
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 16px;
+  & input {
+    height: 32px;
+    padding: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  & span {
+    color: red;
+  }
+  & button {
+    width: 100px;
+    font-size: 16px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border: none;
+  }
+  & label {
+    font-weight: 600;
+  }
+  & textarea {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+}
+
+.balance-card {
+  min-height: 200px;
+  box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-size: 52px;
+  font-weight: 600;
+  color: #1e3a8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

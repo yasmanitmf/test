@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <main class="wrapper">
+      <section class="about-who">
+        <h1>This is who we are</h1>
+        <article class="about-who-text">
+          <p>
+            No secrets, no hidden fees, no tricks. We believe in honest open
+            communications, internally and with our customers.
+          </p>
+          <p>
+            Not only do we believe in what we’re doing, we love it. Making a
+            positive impact in the lives of our customers is what gets us out of bed
+            in the morning.
+          </p>
+          <p>
+            Not only do we believe in what we’re doing, we love it. Making a
+            positive impact in the lives of our customers is what gets us out of bed
+            in the morning.
+          </p>
+        </article>
+      </section>
+      <section class="about-values">
+        <h1>Our Values</h1>
+        <hr />
+        <p>
+          We live each day guided by our core values of Inclusion, Innovation,
+          Collaboration, and Wellness. Together, our values ensure that we work
+          together as one global team with our customers at the center of everything
+          we do – and they push us to ensure we take care of ourselves, each other,
+          and our communities.
+        </p>
+      </section>
+      <section class="about-connect">
+        <h1>Connect with Ease, Pay Globally</h1>
+      </section>
+      <section class="about-earth">
+        <div
+          role="img"
+          class="about-earth-bg"
+          style="
+            background-position: 50% 50%;
+            background-image: url('{{ url_for('static', filename='image/earth.png') }}');
+          "
+        ></div>
+        <div class="about-earth-text">
+          <h1>CosmosTransfer</h1>
+          <p>
+            Our beliefs are the foundation for how we conduct business every day. We
+            are revolutionizing commerce globally. Our mission is simple: to make
+            moving money, simple, personalized, and secure.
+          </p>
+        </div>
+      </section>
+      <section class="about-logo">
+        <img src="{{ url_for('static', filename='image/test1.png') }}" alt="Logo" />
+        <h1>CosmosTransfer</h1>
+        <hr />
+      </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ ! -f /.first-run ]; then
+    # Define colors
+    HEADER_COLOR="\033[1;31m" 
+    BODY_COLOR="\033[0;31m"   
+    BORDER_COLOR="\033[0;31m" 
+    RESET_COLOR="\033[0m"     # Reset to default color
+
+    # Define the border
+    BORDER="${BORDER_COLOR}-------------------------------------------------------------${RESET_COLOR}"
+
+    # Print the message with the border
+    echo -e "$BORDER"
+    echo -e "${HEADER_COLOR}Security Tip:${RESET_COLOR}"
+    echo -e "${BODY_COLOR}Enforce strong password policies to keep your users secured.${RESET_COLOR}"
+    echo -e "$BORDER"
+
+    touch /.first-run
+fi
+
+python /utils/watchfox/run.py &
+
+# Run the Flask app
+echo "Running flask app"
+python run.py

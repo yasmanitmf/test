@@ -1,0 +1,22 @@
+# WatchFox README
+
+**WatchFox** is a file monitoring tool integrated into the Docker environment for this Flask project. It observes specified files for changes and triggers custom actions when modifications are detected, specifically focusing on ensuring that password policies are correctly enforced in the application.
+
+## How It Works
+
+- **Configuration**: WatchFox uses a `config.json` file that defines the base directory, files to monitor, debounce intervals, and password policy tests. The configuration file also specifies the warning message displayed when weak password policies are detected.
+
+- **File Monitoring**: WatchFox continuously monitors files (e.g., `app/forms.py`) for changes. When a modification is detected, it compares the file's content with previous versions, ensuring that significant changes trigger the necessary actions.
+
+- **Password Policy Validation**: Upon detecting a file change, WatchFox triggers the `password_policies.py` script. This script validates that the password fields in forms meet the predefined policies, such as length and complexity requirements. If a policy violation is found, WatchFox outputs a warning message.
+
+- **Running on Docker Startup**: The WatchFox script is launched automatically when the Docker container starts, ensuring continuous monitoring and validation during the container's lifecycle.
+
+## Components
+
+- **`config.json`**: Contains the configuration settings for WatchFox, including paths, debounce intervals, and test password definitions.
+- **`watchfox.py`**: The core script responsible for monitoring files and triggering actions upon file changes.
+- **`run.py`**: Launches WatchFox and manages the continuous monitoring loop.
+- **`password_policies.py`**: Validates password policies within monitored files, ensuring they meet security standards.
+
+WatchFox ensures that the application maintains strong security practices by monitoring for any changes that might weaken password policies and providing immediate feedback.

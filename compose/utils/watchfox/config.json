@@ -1,0 +1,17 @@
+{
+    "basedir": "/app",
+    "files": [
+        "app/forms.py"
+    ],
+    "debounce_interval": 1,
+    "min_line_diff": 1,
+    "test_passwords": {
+        "Abc123!": {"label": "short_pass", "is_valid": false},
+        "abcdef1!": {"label": "no_uppercase", "is_valid": false},
+        "ABCDEF1!": {"label": "no_lowercase", "is_valid": false},
+        "Abcdefg!": {"label": "no_digit", "is_valid": false},
+        "Abcdef1g": {"label": "no_special_char", "is_valid": false},
+        "Abcdef1!": {"label": "valid_password", "is_valid": true}
+    },
+    "warning_message": "A weak password policy has been detected."
+}

@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="home-wrapper">
+  <section class="home-girl-bg">
+    <section class="home-girl">
+      <article class="home-girl-text">
+        <h1>CosmosTransfer</h1>
+        <h2>Connect with Ease, Pay Globally</h2>
+        <p>
+          Welcome to CosmosTransfer, where sending money is as easy as a breeze.
+          Experience the future of hassle-free financial transactions today.
+          Join us and be part of a community that values speed, safety, and
+          simplicity in money transfers.
+        </p>
+        <a href="" class="btn-solid">Sign Up</a>
+      </article>
+      <figure class="home-girl-img">
+        <img  src="{{ url_for('static', filename='image/HomeOfficeSquare.png') }}" alt="Girl" />
+      </figure>
+    </section>
+  </section>
+  <section class="home-numbers">
+    <article class="home-numbers-card">
+      <h1>$110M+</h1>
+      <p>Dollars transferred</p>
+    </article>
+    <article class="home-numbers-card">
+      <h1>4M+</h1>
+
+      <p>Transactions completed</p>
+    </article>
+    <article class="home-numbers-card">
+      <h1>>85%</h1>
+      <p>Customer satisfied</p>
+    </article>
+  </section>
+  <section class="home-features">
+    <article class="home-features-card">
+      <img src="{{ url_for('static', filename='image/feature-1.png') }}" alt="Logo1" />
+      <h1>Instant Transfers</h1>
+      <p>
+        With CosmosTransfer, time is no longer a barrier. Our Instant Transfer
+        feature ensures your money reaches its destination in seconds.
+      </p>
+    </article>
+    <article class="home-features-card">
+      <img src="{{ url_for('static', filename='image/feature-2.png') }}" alt="Logo2" />
+      <h1>Unmatched Security</h1>
+      <p>
+        Your peace of mind is our priority. CosmosTransfer employs
+        state-of-the-art encryption and security protocols to safeguard your
+        financial information and transactions.
+      </p>
+    </article>
+    <article class="home-features-card">
+      <img src="{{ url_for('static', filename='image/feature-3.png') }}" alt="Logo3" />
+      <h1>User-Friendly Interface</h1>
+      <p>
+        Navigate the world of online transactions with unparalleled ease.
+        CosmosTransfer's user-friendly platform is designed for simplicity and
+        efficiency.
+      </p>
+    </article>
+  </section>
+  <section class="home-dog-bg">
+    <section class="home-dog">
+      <figure class="home-dog-img">
+        <img src="{{ url_for('static', filename='image/dog.png') }}" alt="Dog" />
+      </figure>
+      <article class="home-dog-text">
+        <h1>Cash a check from your couch.</h1>
+        <p>
+          It’s simple, secure, speedy.​ Sign up, link your cards and banks, and
+          you’re ready to send and spend
+        </p>
+        <section class="home-dog-cards">
+            <article class="home-dog-card">
+                <h1>70+</h1>
+                <p>Currencies supported</p>
+              </article>
+            <article class="home-dog-card">
+                <h1>156+</h1>
+                <p>Countries covered</p>
+              </article>
+        </section>
+      </article>
+    </section>
+  </section>
+  <section class="home-logo">
+    <img src="{{ url_for('static', filename='image/test1.png') }}" alt="Logo" />
+    <article class="home-logo-text">
+      <h1>Business payments for today’s global economy</h1>
+      <p>
+        The CosmosTransfer multi-currency account has everything your business
+        needs to transfer, get paid, and grow globally.
+      </p>
+    </article>
+  </section>
+</main>
+{% endblock %}
